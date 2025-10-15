@@ -1,0 +1,35 @@
+Requisitos previos para utilizar y ejecutar el proyecto
+- Instalar Mysql Workbench y tener acceso a la bd como root a una base de datos que se llame "sistema". (En caso de querer cambiarla se deberan cambiar los parámetros del script CargarBD.sh).
+- Instalar VS code
+- Instalar Php (sudo apt install php)
+
+Contraseña de BD: "root"
+La base de datos esta compuesta de 3 tablas con los siguientes aributos:
+Dependencias
+	id	int PK
+	dependencia	varchar(200)
+	secretaria	varchar(200)
+	cil	varchar(200)
+Usuarios
+	id	int AI PK
+	login	varchar(100)
+	nombApe	varchar(200)
+	id_dependencia	int
+Solicitud
+    id	int AI PK
+	nro	int
+	nombSistema	varchar(200)
+	operacion	varchar(200)
+	estado	varchar(100)
+	fecha	date
+	login	varchar(100)
+
+Estas tablas deben ser cargadas con el ejecutable CargarBD.sh donde se debe indicar (Y TENER MUCHO CUIDADO) el nombre del sistema a las que perteneces las solicitudes que van a ser cargadas.
+Para ejecutar este script se deben seguir los siguientes pasos:
+    1. Colocar en una carpeta el ejecutable CargarBD.sh y el listado obtenido de ServiciosTI para un sistema en especifico (IMPORTANTE CAMBIARLE EL NOMBRE AL ARCHIVO DEL LISTADO POR "LISTADO").
+    2. Abrir la terminal en esa carpeta e ingresar "bash CargarBD.sh".
+    3. Ingresar el nombre del sistema al cual pertenecen las solicitudes.
+    4. Si todo salio correcto deberá aparecer en consola el mensaje: "".
+El funcionamiento de CargarDB esta detallado en su codigo, pero basicamente funciona de la siguiente manera:
+    1. Toma el listado con nombre Listado.csv que guardamos en la carpeta.
+    2. Crea 3 nuevos csv con los nombres dependencias.csv, usuarios.csv y solicitudes.csv.

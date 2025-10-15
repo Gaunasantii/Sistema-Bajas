@@ -1,0 +1,5 @@
+- Corroborar que el CargarBD.sh cargue efectivamente los datos como son debidos:
+    - No pise registros de los Sistemas. Si cargamos solicitudes de sistemas diferentes, sea capaz de diferenciarlo en la tabla y no cree nuevos usuarios y dependencias o pise registros.
+    - Cambie los diferentes estados de las solicitudes a traves del tiempo. Si una solicitud de un mismo sistema se encontraba en estado pendiente y luego pasa a estado aprobada o a resuelta, que sea capaz de cambiar esos registros por los actualizados.
+- Recordar cargar la tabla de usuarios baja total con el script ProcesarBajaTotal.sh (Ese funciona relativamente bien).
+- Ejecutar la query correspondiente y validar que traiga a todos los usuarios con sus respectivos estados en cada sistema.
