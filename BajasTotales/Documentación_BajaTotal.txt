@@ -1,0 +1,14 @@
+El archivo ProcesarBajaTotal.sh funciona de la siguiente manera:
+
+1. Se deben ingresar todos los parametros de la Base de datos, por defecto estos son:
+    DB_HOST="localhost" # En esta variable va el nombre del host de la conexión (por defecto dejar este)
+    DB_USER="root"
+    DB_PASS="root"     # En esta variable va la contraseña de la conexión de mysql
+    DB_NAME="Sistema"  # En esta variable va el nombre que tiene asignada la Base de datos creada en la conexión (shcema)
+
+2. Descargar el listado de solicitudes de baja total desde servicios TI, deben ser todas las solicitudes (tanto resueltas como no resueltas).
+
+3. Guardar el archivo de bajas totales en la misma carpeta que ProcesarBajaTotal.sh.
+
+4. Para iniciar el archivo se debe abrir consola en donde se encuentra ProcesarBajaTotal.sh y colocar el comando "bash ProcesarBajaTotal.sh 'NombreListadoSolicitudes'"
+    Esto cargará en la base de datos correspondiente todos los login, apellidos y nombres de aquellos usuarios cuya baja total esta en estado "Servicio Eliminado" o "Solicitud Resuelta"
